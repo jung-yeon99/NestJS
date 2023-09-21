@@ -1,0 +1,42 @@
+GET http://localhost:3003/Bservice
+### ------------- services
+POST {{host}}
+
+###
+GET http://localhost:3003/hello
+
+### ------------- users
+GET {{host}}/redirect-hello?nickname=김정연&addr=123&age=25
+### ------------- create
+POST {{host}}/users
+Content-Type: application/json
+
+{
+  "name": "김정연",
+  "email": "2@naver.com",
+  "password": "1234",
+  "addr": "서울"
+} 
+### ------------ users insert
+POST {{host}}/users
+Content-Type: application/json
+
+{
+  "name": "홍길동7",
+  "email": "indiflex7@gmail.com",
+  "passwd": "as121adsfa",
+  "profile": {
+    "photo": "/upload/hong.jpg"
+  },
+  "addrs": [{
+    "street": "서울특별시",
+    "detail": "도봉구"
+  }],
+  "auths": [{
+    "authname": "J"
+  }]
+}
+
+
+### ------------
+GET {{host}}/users/1
